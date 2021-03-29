@@ -26,33 +26,35 @@ This repository offers an analysis of factors that influence housing prices in K
 
 ### Quick Links
 
-1. [Final Analysis Notebook](notebooks/exploratory/final_notebook.ipynb)
+1. [Final Analysis Notebook](notebooks/exploratory/Second_Mission.ipynb)
 2. [Presentation Slides](reports/presentation.pdf)
-
+3. [Report Notebook](notebooks/reports/Report.ipynb)
 ### Setup Instructions
 
 TODO: add setup instructions (e.g. the name of the Conda environment file)
 
 ## Business Understanding
 
-TODO: add business understanding
+A client in King County, WA wants to advise homeowners on home improvement projects that will add to the sale value of their homes.
 
 ## Data Understanding
 
-TODO: add data understanding, including at least 3 high-quality visualizations
 
 ## Data Preparation
 
-TODO: add data preparation (which can be quite brief, but make sure you explain any dropped records)
+I dropped all null values and 0's for every continuous variable. I also dropped low and high outliers for SqFtTotLiving and SalePrice.
 
 ## Modeling
 
-TODO: add modeling.  What are the features of your final model?
+I ended up using SqFtTotLiving, BldgGrade, Bedrooms and BathFullCount to try and predict SalePrice.
 
 ## Evaluation
 
-TODO: add evaluation.  How well does your model meet the assumptions of linear regression?
+I ended with being able to predict 44% of the variation, with violating the normality assumption due to the probability of the JB value is tiny. The homoscedasticity assumption was violated as well due to the check returning a value of 0. The model does not violate the linearity assumption and has very little multicollinearity.
 
 ## Conclusion
 
-TODO: add conclusion.  How does your model answer the business question?
+With my model I could predict that with every increase of building grade, the sale price would increase by about $3200. For every added bedroom the sale price would increase by about 3400. And for every added full bathroom the sale price would increase by about $3000.
+Due to the model having a relatively low R-squared, large JB value and violating the homoscedasticity check, I would have to say I am not very confident in this model and it doesnt answer the business question very well.
+
+Next steps would be to investigate the data more to see if there are features that would group the data cleaner in order to better predict.
